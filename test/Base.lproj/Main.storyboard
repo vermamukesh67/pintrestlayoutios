@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NMN-j0-YJq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xXq-m3-aBy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="Uhi-cC-SrB" customClass="OCTGalleryLayout_v1"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TripMetryHotelBoxCell" id="Lnw-4H-l67" customClass="TripMetryHotelBoxCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="181" height="277"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="181" height="277"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vjb-Lt-WGg">
+                                                    <rect key="frame" x="5" y="5" width="171" height="194"/>
+                                                    <color key="backgroundColor" red="0.88107579946517944" green="0.7213929295539856" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$232" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqK-wv-J9d">
+                                                    <rect key="frame" x="5" y="209" width="60" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="PPW-dO-3E2"/>
+                                                        <constraint firstAttribute="height" constant="21" id="WWU-pO-jEq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.2362747788" blue="0.23588848109999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luxury bed in the city center" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yml-0C-bOW">
+                                                    <rect key="frame" x="5" y="236.5" width="171" height="38.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="38.5" id="Tfu-OJ-X88"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★★★★" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNW-cI-tGO">
+                                                    <rect key="frame" x="101" y="209" width="75" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Ilf-vY-cOy"/>
+                                                        <constraint firstAttribute="width" constant="75" id="m1y-fe-EUx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
+                                                    <color key="textColor" red="1" green="0.23627477884292603" blue="0.23588848114013672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="MqK-wv-J9d" firstAttribute="top" secondItem="Vjb-Lt-WGg" secondAttribute="bottom" constant="10" id="1wK-tF-cy0"/>
+                                            <constraint firstItem="yml-0C-bOW" firstAttribute="top" secondItem="MqK-wv-J9d" secondAttribute="bottom" constant="6.5" id="3Ua-oM-RpV"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vjb-Lt-WGg" secondAttribute="trailing" constant="5" id="5D7-NE-GWQ"/>
+                                            <constraint firstItem="tNW-cI-tGO" firstAttribute="centerY" secondItem="MqK-wv-J9d" secondAttribute="centerY" id="68Z-Y3-82c"/>
+                                            <constraint firstItem="yml-0C-bOW" firstAttribute="leading" secondItem="Lnw-4H-l67" secondAttribute="leading" constant="5" id="85L-O9-EXs"/>
+                                            <constraint firstItem="MqK-wv-J9d" firstAttribute="leading" secondItem="Lnw-4H-l67" secondAttribute="leading" constant="5" id="HcE-l9-hvS"/>
+                                            <constraint firstAttribute="trailing" secondItem="yml-0C-bOW" secondAttribute="trailing" constant="5" id="KDo-9V-EC0"/>
+                                            <constraint firstAttribute="trailing" secondItem="tNW-cI-tGO" secondAttribute="trailing" constant="5" id="RQF-pm-ddm"/>
+                                            <constraint firstItem="Vjb-Lt-WGg" firstAttribute="leading" secondItem="Lnw-4H-l67" secondAttribute="leading" constant="5" id="RdO-S0-PdK"/>
+                                            <constraint firstAttribute="bottom" secondItem="yml-0C-bOW" secondAttribute="bottom" constant="2" id="Vh6-q4-XGq"/>
+                                            <constraint firstItem="Vjb-Lt-WGg" firstAttribute="top" secondItem="Lnw-4H-l67" secondAttribute="top" constant="5" id="geR-wU-YcY"/>
+                                        </constraints>
+                                        <size key="customSize" width="181" height="277"/>
+                                        <connections>
+                                            <outlet property="imgHotel" destination="Vjb-Lt-WGg" id="4AF-cj-J2H"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ZiO-DC-ACu"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="u9z-1k-Too"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xXq-m3-aBy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3lx-8k-3Wo"/>
+                            <constraint firstItem="xXq-m3-aBy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kGB-hg-eg9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xXq-m3-aBy" secondAttribute="bottom" id="n7v-LC-9C9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xXq-m3-aBy" secondAttribute="trailing" id="rct-1D-HhJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qo6-PV-n4j"/>
+                    <connections>
+                        <outlet property="collectionView" destination="xXq-m3-aBy" id="VJf-aE-HNp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124" y="-785"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wLW-pr-FzW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NMN-j0-YJq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="s5Q-iT-TyI">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Oy4-bu-g4l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ydn-RK-R9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="690.40479760119945"/>
+        </scene>
+    </scenes>
+</document>

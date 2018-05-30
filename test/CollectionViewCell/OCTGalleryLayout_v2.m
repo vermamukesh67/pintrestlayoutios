@@ -1,0 +1,73 @@
+//
+//  OCTBaseCollectionViewLayout_v2.m
+//  OCTCustomCollectionViewLayout
+//
+//  Created by dmitry.brovkin on 4/3/17.
+//  Copyright © 2017 dmitry.brovkin. All rights reserved.
+//
+
+#import "OCTGalleryLayout_v2.h"
+
+static const CGFloat kSideItemWidthCoef = 0.3;
+static const CGFloat kSideItemHeightAspect = 1;
+static const NSInteger kNumberOfSideItems = 3;
+
+@implementation OCTGalleryLayout_v2
+{
+    CGSize _mainItemSize;
+    CGSize _sideItemSize;
+    NSArray<NSNumber *> *_columnsXoffset;
+}
+
+#pragma mark Init
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        self.totalColumns = 2;
+    }
+    
+    return self;
+}
+
+#pragma mark Override Abstract methods
+
+- (NSInteger)columnIndexForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger totalItemsInRow = kNumberOfSideItems + 1;
+    NSInteger columnIndex = indexPath.item % totalItemsInRow;
+    NSInteger columnIndexLimit = self.totalColumns - 1;
+    
+    return columnIndex > columnIndexLimit  ? columnIndexLimit : columnIndex;
+}
+
+- (CGRect)calculateItemFrameAtIndexPath:(NSIndexPath *)indexPath columnIndex:(NSInteger)columnIndex columnYoffset:(CGFloat)columnYoffset {
+    CGSize size = columnIndex == 0 ? _mainItemSize : _sideItemSize;
+    return CGRectMake(_columnsXoffset[columnIndex].floatValue, columnYoffset, size.width, size.height);
+}
+
+- (void)calculateItemsSize {
+    CGFloat contentWidthWithoutIndents = self.collectionView.bounds.size.width - self.contentInsets.left - self.contentInsets.right;
+    CGFloat resolvedContentWidth = contentWidthWithoutIndents - self.interItemsSpacing;
+
+    // We need to calculate side item size first, in order to calculate main item height
+    CGFloat sideItemWidth = resolvedContentWidth * kSideItemWidthCoef;
+    CGFloat sideItemHeight = sideItemWidth * kSideItemHeightAspect;
+
+    _sideItemSize = CGSizeMake(sideItemWidth, sideItemHeight);
+
+    // Now we can calculate main item height
+    CGFloat mainItemWidth = resolvedContentWidth - sideItemWidth;
+    CGFloat mainItemHeight = sideItemHeight * kNumberOfSideItems + ((kNumberOfSideItems - 1) * self.interItemsSpacing);
+
+    _mainItemSize = CGSizeMake(mainItemWidth, mainItemHeight);
+    
+    // Calculating offsets by X for each column
+    _columnsXoffset = @[@(0), @(_mainItemSize.width + self.interItemsSpacing)];
+}
+
+- (NSString *)description {
+    return @"Layout v2";
+}
+
+@end
